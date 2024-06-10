@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    
+</head>
+<body>
+    <h1>Form</h1>
+    <form action="form.html" method="post" onsubmit=" return get()">
+        <pre>
+            <label for="name">Full Name:</label><input type="text" name="name" id="name">
+            
+            <label for="email">Email:</label><input type="email" name="email" id="email">
+            
+            <label for="password">Password:</label><input type="password" name="password" id="password">
+            
+            <label for="mobile">Mobile:</label><input type="number" name="mobile" id="" pattern="[0-9]{10}">
+
+            <input type="radio" name="gender" id="" value = "male">Male <input type="radio" name="gender" id="" value = "female">Female
+            Select Semester: <select name="Sem" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select> 
+            <input type="submit" value="Submit">
+
+        </pre>
+    </form>
+    <div id="names"></div>
+</body>
+</html>
