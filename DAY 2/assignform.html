@@ -6,7 +6,7 @@
     <title>Assignment 2</title>
 </head>
 <body>
-    <form action="" method="post">
+    <!-- <form action="" method="post" onsubmit="onSubmit()"> -->
     <table border = "2" style = "background-color: aqua;">
         <tr>
             <th colspan="2">Student Registration Form</th>
@@ -88,9 +88,32 @@
         </tr>
         <tr>
             <td><input type="reset" value="Reset"></td>
-            <td><input type="submit" value="Submit Form"></td>
+            <td><input type="submit" value="Submit Form" id ="submit"></td>
         </tr>
     </table>
-</form>
+<!-- </form> -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody id = "tbody"></tbody>
+    </table>
+<script>
+    let name = document.getElementById("name");
+    let mob = document.getElementById("mobile");
+    let email = document.getElementById("email");
+    let submit = document.getElementById("submit");
+    let tbody = document.getElementById("tbody");
+    submit.addEventListener("click", onSubmit);
+    function onSubmit()
+    {
+        console.log(name.value,mob.value,email.value);
+        tbody.innerHTML += "<tr><td>"+name.value+"</td><td>"+email.value+"</td><td>"+mob.value+"</td></tr>";
+    }
+</script>
 </body>
 </html>
