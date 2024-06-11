@@ -55,13 +55,40 @@
     //  let y = 3;
     //  let z = 2;
     //  console.log(x>y && x>z? ""+x+" is greater":y>z? ""+y+" is greater":""+z+" is greater");
-
-    for(let x = 0; x < 10;x++)
-    console.count();
-    
+    //   document.writeln("cxvxcvxcvxcvxcvcxvx");
+    // for(let x = 0; x < 10;x++)
+    // console.count();
+ 
     </script>
   </head>
   <body>
-    <button onclick="callalert()">hhhh</button>
+    <button id = "btn1">Click me</button>
+    <div id="box" style = "width: 100px; height: 100px; background-color: aqua;"></div>
+     <div id="container"></div>
+     <script>
+           let elem = document.getElementById("container");
+           let box = document.getElementById("box");
+           let button = document.getElementById("btn1");
+           elem.style.color = "red";
+           button.addEventListener("mouseover",color);//event listener /alternative of onclick
+           button.addEventListener("mouseleave",colors);
+    function addItem()
+    {
+        elem.innerHTML += "<h1>This is h1 tag</h1></br>";
+    }
+    function color()
+    {
+        box.style.backgroundColor = "red";
+        box.style.width = "200px";
+        box.style.height = "200px";
+    }
+    function colors()
+    {
+        box.style.backgroundColor = "aqua";
+        box.style.width = "100px";
+        box.style.height = "100px";
+    }
+     </script>
   </body>
+
 </html>
