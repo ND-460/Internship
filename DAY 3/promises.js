@@ -15,11 +15,14 @@ function myPromise()
         },2000);
 });
 }
-document.getElementById("btn1").addEventListener("click",() => {
+let elem = document.getElementById("btn1");
+document.getElementById("btn1").addEventListener("click",async() => {
     displayOutput("Loading...");
-    myPromise().then((res) => {
+    elem.style.display = "none";
+    await myPromise().then((res) => {
         displayOutput(`Success: ${res}`)
     }).catch((err) => {displayOutput(`Failure: ${err}`)});
+    elem.style.display = "block";
 });
 function displayOutput(message)
 {
