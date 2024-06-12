@@ -13,4 +13,10 @@ let arr2 = [...arr1,1,2,3,4];
 let arrofobjs = [{name: "scdscsdc",asdsad:"asdsad"},{name: "scdscs",asdsad:"asdsad"},{name: "sdfsfsa",asdsad:"asdsad"}];
 let arrobj = arrofobjs.filter((item,index) => item.name == "sdfsfsa");
 // arr2 = arr2.concat(arr1);
-console.log(arr,arr1,arr2,arrobj);
+let abc = [1,23,4,5,6];
+let pushed = arr1.push(11);
+let joined = arr1.join("");
+let popped = arr2.pop();
+let reduceditem = abc.reduce((acc,cur) => acc +cur)
+let mapped = abc.map((item,index) return index>2)
+console.log(arr,arr1,arr2,arrobj,pushed,popped,joined,reduceditem);
