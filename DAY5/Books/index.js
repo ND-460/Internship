@@ -42,17 +42,29 @@ app.post("/api/books",(req,res) =>{
     books.push(newBook);
     res.status(201).send(newBook);
 });
-app.delete("/api/books/:id",(res,req) => {
-    const reqId = req.params.id;
-    let book = books.find((item) => item.id == reqId);
-    // console.log(book);
-    if(!book){
-        res.status(404).send("book is not available");
+app.delete("/api/books/:bookId",(req,res)=>{
+    const reqId = req.params.bookId;
+    let book = books.find((item) => item.id == reqId)
+    if (book.length ==0){
+        res.status(404).send("<h1> Book Not Found</h1>")
         return;
     }
-    const index = books.indexOf(book);
-    console.log(index);
-    books.splice(index,1);
-    res.send(book);
+       const index = books.indexOf(book);
+       //console.log(index);
+       books.splice(index, 1)
+       res.send(book);
+    });
+    app.put("/api/books/:bookId",(req,res)=>{
+        const reqId = req.params.bookId;
+        let book = books.find((item) => item.id == reqId)
+        if (book.length ==0){
+            res.status(404).send("<h1> Book Not Found</h1>")
+            return;
+        }
+        book.name = req.body.name;
+        book.author = req.body.author;
+        res.send(book);
+        });
+app.listen((3000),() =>{
+    console.log("Server running on port 3000");
 });
-app.listen(3000);
